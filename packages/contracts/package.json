@@ -12,7 +12,10 @@
     "deploy:base": "forge script script/Deploy.s.sol:Deploy --rpc-url $BASE_RPC_URL --broadcast --verify",
     "verify": "forge verify-contract",
     "flatten": "forge flatten",
-    "size": "forge build --sizes"
+    "size": "forge build --sizes",
+    "lint": "forge fmt --check",
+    "format": "forge fmt",
+    "coverage": "forge coverage"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.0",

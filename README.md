@@ -2,6 +2,11 @@
 
 A decentralized lottery system built on Base (EVM) with Chainlink VRF for provably fair randomness and Chainlink Automation for automated operations.
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/zeeshanjunaid/quantum-lottery)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Solidity](https://img.shields.io/badge/Solidity-0.8.20-blue?style=for-the-badge&logo=solidity)](https://soliditylang.org/)
+[![Base](https://img.shields.io/badge/Base-EVM-blue?style=for-the-badge&logo=ethereum)](https://base.org/)
+
 ## Architecture
 
 The project consists of three main packages:
@@ -44,11 +49,12 @@ The system supports both Base Sepolia (testnet) and Base Mainnet with configurab
 
 ## Getting Started
 
-1. **Install Dependencies**: `npm install`
-2. **Configure Environment**: Set up `.env` files for each package
-3. **Deploy Contracts**: `npm run deploy`
-4. **Deploy Subgraph**: `npm run subgraph:deploy`
-5. **Start Frontend**: `npm run frontend:dev`
+1. **Clone Repository**: `git clone https://github.com/zeeshanjunaid/quantum-lottery.git`
+2. **Install Dependencies**: `npm install`
+3. **Configure Environment**: Set up `.env` files for each package
+4. **Deploy Contracts**: `npm run deploy`
+5. **Deploy Subgraph**: `npm run subgraph:deploy`
+6. **Start Frontend**: `npm run frontend:dev`
 
 ## Security Features
 
@@ -58,6 +64,18 @@ The system supports both Base Sepolia (testnet) and Base Mainnet with configurab
 - Automated operations with Chainlink Automation
 - Comprehensive testing and auditing
 
+## Contributing
+
+We welcome contributions! Please read our contributing guidelines and submit pull requests.
+
 ## License
 
-MIT License
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## Links
+
+- **GitHub Repository**: https://github.com/zeeshanjunaid/quantum-lottery
+- **Base Network**: https://base.org/
+- **Chainlink VRF**: https://docs.chain.link/vrf
+- **Chainlink Automation**: https://docs.chain.link/automation
+- **The Graph**: https://thegraph.com/

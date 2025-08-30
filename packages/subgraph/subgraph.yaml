@@ -1,0 +1,42 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: QuantumLottery
+    network: base-sepolia
+    source:
+      address: "0x0000000000000000000000000000000000000000"
+      abi: QuantumLottery
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Ticket
+        - Draw
+        - User
+        - Purchase
+      abis:
+        - name: QuantumLottery
+          file: ./abis/QuantumLottery.json
+      eventHandlers:
+        - event: TicketPurchased(indexed address,indexed uint8,indexed uint256,uint256,uint256)
+          handler: handleTicketPurchased
+        - event: RandomnessRequested(indexed uint256)
+          handler: handleRandomnessRequested
+        - event: DrawCompleted(indexed uint256,indexed uint256,indexed address,uint256,uint256)
+          handler: handleDrawCompleted
+        - event: TreasuryAddressUpdated(indexed address)
+          handler: handleTreasuryAddressUpdated
+        - event: MultisigAddressUpdated(indexed address)
+          handler: handleMultisigAddressUpdated
+        - event: VRFParametersUpdated(bytes32,uint64,uint32)
+          handler: handleVRFParametersUpdated
+        - event: AutomationUpkeepIdUpdated(indexed uint256)
+          handler: handleAutomationUpkeepIdUpdated
+        - event: EmergencyWithdraw(indexed address,uint256,uint256)
+          handler: handleEmergencyWithdraw
+      file: ./src/quantum-lottery.ts
+templates: []

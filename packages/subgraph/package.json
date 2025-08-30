@@ -1,0 +1,24 @@
+{
+  "name": "@quantum-lottery/subgraph",
+  "version": "1.0.0",
+  "description": "The Graph subgraph for Quantum Lottery",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/",
+    "deploy:base-sepolia": "graph deploy --node https://api.studio.thegraph.com/deploy/ --network base-sepolia",
+    "deploy:base": "graph deploy --node https://api.studio.thegraph.com/deploy/ --network base",
+    "create:base-sepolia": "graph create --node https://api.studio.thegraph.com/deploy/ --network base-sepolia",
+    "create:base": "graph create --node https://api.studio.thegraph.com/deploy/ --network base",
+    "remove:base-sepolia": "graph remove --node https://api.studio.thegraph.com/deploy/ --network base-sepolia",
+    "remove:base": "graph remove --node https://api.studio.thegraph.com/deploy/ --network base"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.60.0",
+    "@graphprotocol/graph-ts": "^0.31.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

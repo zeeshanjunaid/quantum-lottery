@@ -1,0 +1,68 @@
+type Ticket @entity {
+  id: ID!
+  ticketId: BigInt!
+  drawId: BigInt!
+  holder: User!
+  ticketType: TicketType!
+  price: BigInt!
+  feeAmount: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  transactionHash: String!
+}
+
+type Draw @entity {
+  id: ID!
+  drawId: BigInt!
+  status: DrawStatus!
+  winningTicket: BigInt
+  winner: User
+  randomWord: BigInt
+  timestamp: BigInt!
+  totalTickets: BigInt!
+  totalPrize: BigInt!
+  tickets: [Ticket!]! @derivedFrom(field: "draw")
+  randomnessRequested: Boolean!
+  completedAt: BigInt
+}
+
+type User @entity {
+  id: ID!
+  address: Bytes!
+  totalTicketsPurchased: BigInt!
+  totalSpent: BigInt!
+  tickets: [Ticket!]! @derivedFrom(field: "holder")
+  drawsWon: [Draw!]! @derivedFrom(field: "winner")
+  lastPurchaseAt: BigInt
+  firstPurchaseAt: BigInt
+}
+
+type Purchase @entity {
+  id: ID!
+  user: User!
+  ticket: Ticket!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  transactionHash: String!
+}
+
+type LotteryStats @entity {
+  id: ID!
+  totalTicketsSold: BigInt!
+  totalFeesCollected: BigInt!
+  totalDraws: BigInt!
+  totalWinners: BigInt!
+  totalPrizePool: BigInt!
+  lastUpdated: BigInt!
+}
+
+enum TicketType {
+  Standard
+  Quantum
+}
+
+enum DrawStatus {
+  Pending
+  Completed
+  Cancelled
+}

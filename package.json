@@ -1,0 +1,30 @@
+{
+  "name": "quantum-lottery",
+  "version": "1.0.0",
+  "description": "Quantum Lottery - A decentralized lottery system on Base with Chainlink VRF and Automation",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "deploy": "npm run deploy --workspaces",
+    "subgraph:codegen": "cd packages/subgraph && npm run codegen",
+    "subgraph:build": "cd packages/subgraph && npm run build",
+    "subgraph:deploy": "cd packages/subgraph && npm run deploy",
+    "frontend:dev": "cd packages/frontend && npm run dev",
+    "frontend:build": "cd packages/frontend && npm run build"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "@chainlink/contracts": "^0.8.0",
+    "foundry": "^0.2.0",
+    "hardhat": "^2.19.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

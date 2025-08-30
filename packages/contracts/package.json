@@ -1,0 +1,24 @@
+{
+  "name": "@quantum-lottery/contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for Quantum Lottery system",
+  "main": "index.js",
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "test:coverage": "forge coverage",
+    "test:gas": "forge test --gas-report",
+    "deploy:base-sepolia": "forge script script/Deploy.s.sol:Deploy --rpc-url $BASE_SEPOLIA_RPC_URL --broadcast --verify",
+    "deploy:base": "forge script script/Deploy.s.sol:Deploy --rpc-url $BASE_RPC_URL --broadcast --verify",
+    "verify": "forge verify-contract",
+    "flatten": "forge flatten",
+    "size": "forge build --sizes"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "@chainlink/contracts": "^0.8.0"
+  },
+  "devDependencies": {
+    "foundry": "^0.2.0"
+  }
+}

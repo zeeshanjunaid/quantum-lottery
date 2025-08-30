@@ -1,0 +1,33 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.20"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+
+[profile.default.fuzz]
+runs = 1000
+
+[profile.default.invariant]
+runs = 1000
+depth = 15
+fail_on_revert = false
+
+[profile.default.metadata]
+bytecode_hash = "none"
+
+[profile.default.libraries]
+src/libraries/LotteryMath.sol:LotteryMath = "0x0000000000000000000000000000000000000000"
+
+[profile.default.etherscan]
+base = { key = "${ETHERSCAN_API_KEY}" }
+base_sepolia = { key = "${ETHERSCAN_API_KEY}" }
+
+[profile.default.rpc_endpoints]
+base = "${BASE_RPC_URL}"
+base_sepolia = "${BASE_SEPOLIA_RPC_URL}"
+
+[profile.default.sources]
+src = { remappings = ["@openzeppelin/=lib/openzeppelin-contracts/", "@chainlink/=lib/chainlink/"] }

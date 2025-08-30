@@ -16,7 +16,7 @@ Modern, responsive frontend for the Quantum Lottery system built with Next.js, R
 npm install
 ```
 
-## Environment Setup
+## Environment Variables
 
 1. Copy environment template:
 ```bash
@@ -24,10 +24,23 @@ cp .env.example .env.local
 ```
 
 2. Configure your environment variables in `.env.local`:
-   - Contract addresses
-   - Network configuration
-   - Subgraph URL
-   - WalletConnect project ID
+
+```bash
+# Contract Addresses
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x0000000000000000000000000000000000000000
+NEXT_PUBLIC_USDC_ADDRESS=0x0000000000000000000000000000000000000000
+
+# Network Configuration
+NEXT_PUBLIC_CHAIN_ID=84532
+NEXT_PUBLIC_RPC_URL=https://sepolia.base.org
+NEXT_PUBLIC_EXPLORER_URL=https://sepolia.basescan.org
+
+# Subgraph Configuration
+NEXT_PUBLIC_SUBGRAPH_URL=https://api.studio.thegraph.com/query/0/quantum-lottery/v0.0.1
+
+# WalletConnect Configuration
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_wallet_connect_project_id_here
+```
 
 ## Development
 

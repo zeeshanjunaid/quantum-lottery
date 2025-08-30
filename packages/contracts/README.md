@@ -28,7 +28,7 @@ cp .env.example .env
 
 2. Configure your environment variables in `.env`
 
-## Development
+## Development Commands
 
 ```bash
 # Build contracts
@@ -47,7 +47,7 @@ forge fmt
 npm run lint
 ```
 
-## Testing
+## Testing Commands
 
 ```bash
 # Run all tests
@@ -60,7 +60,17 @@ forge test --match-test testPurchaseStandardTicket
 npm run test:gas
 ```
 
-## Deployment
+## Fork Testing Commands
+
+```bash
+# Fork Base Sepolia for testing
+forge test --fork-url $BASE_SEPOLIA_RPC_URL
+
+# Fork with specific block
+forge test --fork-url $BASE_SEPOLIA_RPC_URL --fork-block-number 12345678
+```
+
+## Deployment Commands
 
 ### Base Sepolia (Testnet)
 

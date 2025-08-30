@@ -30,17 +30,23 @@ cp .env.example .env
 graph auth --studio
 ```
 
-## Development
+## Development Steps
+
+### Codegen
 
 ```bash
 # Generate types from schema
 npm run codegen
+```
 
+### Build
+
+```bash
 # Build subgraph
 npm run build
 ```
 
-## Deployment
+## Deployment Steps
 
 ### The Graph Studio (Recommended)
 

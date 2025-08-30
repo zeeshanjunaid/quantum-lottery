@@ -42,17 +42,49 @@ The project consists of three main packages:
 ## Environment Configuration
 
 The system supports both Base Sepolia (testnet) and Base Mainnet with configurable:
-- USDC contract addresses
-- Chainlink VRF parameters (keyHash, subscriptionId, callbackGas)
-- Chainlink Automation upkeep IDs
-- Treasury and multisig addresses
+
+### Root Environment Variables
+```bash
+BASE_SEPOLIA_RPC=https://sepolia.base.org
+BASE_MAINNET_RPC=https://mainnet.base.org
+PRIVATE_KEY=your_private_key_here
+TREASURY=your_treasury_address_here
+MULTISIG=your_multisig_address_here
+NETWORK=base-sepolia
+CHAIN_ID=84532
+```
+
+### Contracts Environment Variables
+```bash
+USDC=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+VRF_KEY_HASH=0x0000000000000000000000000000000000000000000000000000000000000000
+VRF_SUBSCRIPTION_ID=0
+VRF_CALLBACK_GAS=500000
+AUTOMATION_UPKEEP_HOURLY=0
+AUTOMATION_UPKEEP_DAILY=0
+```
+
+### Frontend Environment Variables
+```bash
+NEXT_PUBLIC_CHAIN_ID=84532
+NEXT_PUBLIC_RPC_URL=https://sepolia.base.org
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x0000000000000000000000000000000000000000
+NEXT_PUBLIC_SUBGRAPH_URL=https://api.studio.thegraph.com/query/0/quantum-lottery/v0.0.1
+```
+
+### Subgraph Environment Variables
+```bash
+NETWORK=base-sepolia
+RPC_URL=https://sepolia.base.org
+CONTRACT_ADDRESS=0x0000000000000000000000000000000000000000
+```
 
 ## Getting Started
 
 1. **Clone Repository**: `git clone https://github.com/zeeshanjunaid/quantum-lottery.git`
 2. **Install Dependencies**: `npm install`
-3. **Configure Environment**: Set up `.env` files for each package
-4. **Deploy Contracts**: `npm run deploy`
+3. **Configure Environment**: Set up `.env` files for each package using the variables above
+4. **Deploy Contracts**: `npm run contracts:deploy:sepolia`
 5. **Deploy Subgraph**: `npm run subgraph:deploy`
 6. **Start Frontend**: `npm run frontend:dev`
 
